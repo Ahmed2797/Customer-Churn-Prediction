@@ -27,7 +27,7 @@ metrics:
   value: 0.030072592645939148
 - id: 2ffe006c1c028038416b22f1411e3824
   metric_id: ValueDrift(column=Geography)
-  value: 0.008197865098449176
+  value: 0.008197865098449164
 - id: 36230dcfc62097d9b2725a795000a999
   metric_id: ValueDrift(column=Gender)
   value: 0.0015978787291084367
