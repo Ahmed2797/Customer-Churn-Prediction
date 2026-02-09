@@ -110,9 +110,9 @@ class Training_Pipeline:
 
             data_ingestion_artifact = self.get_started_data_ingestion()
             data_validation_artifact = self.get_started_data_validation(data_ingestion_artifact)
-            # data_transformation_artifact = self.get_started_data_transformation(
-            #     data_ingestion_artifact, data_validation_artifact
-            # )
+            data_transformation_artifact = self.get_started_data_transformation(
+                data_ingestion_artifact, data_validation_artifact
+            )
             # model_trainer_artifact = self.get_model_trainer(data_transformation_artifact)
 
             logging.info("======= Training Pipeline Execution Completed Successfully =======")
