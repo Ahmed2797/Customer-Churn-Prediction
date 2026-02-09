@@ -74,7 +74,7 @@ class Data_Transformation:
             # Categorical pipeline
             categorical_pipeline = Pipeline(steps=[
                 ("imputer", SimpleImputer(strategy="most_frequent")),
-                ("encoder", OneHotEncoder(handle_unknown="ignore", drop='first'))
+                # ("encoder", OneHotEncoder(handle_unknown="ignore", drop='first'))
             ])
 
             # Transformer pipeline
@@ -147,7 +147,8 @@ class Data_Transformation:
             # Target mapping
             # y_train = self.target_value_mapping(y_train)
             # y_test = self.target_value_mapping(y_test)
-
+            print("xtrain:",X_train.columns)
+            print("xtrain:",X_train.head())
             # Preprocessor pipeline
             preprocessor = self.get_data_transformation()
             X_train_trans = preprocessor.fit_transform(X_train)
