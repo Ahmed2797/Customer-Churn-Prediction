@@ -1,0 +1,53 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python main.py data_ingestion
+    deps:
+    - path: notebook/Churn_Modelling.csv
+      hash: md5
+      md5: 496aee8fbfdfa1dfb6daa9dbca5d1a01
+      size: 684858
+    - path: project/components/data_ingestion.py
+      hash: md5
+      md5: bc02ebe962f014ab3570e69f0dba16c5
+      size: 3217
+    - path: project/pipeline/training_pipeline.py
+      hash: md5
+      md5: 8a5e46e93ff6786a7879d1386492e59a
+      size: 4502
+    - path: yaml_file/columns.yaml
+      hash: md5
+      md5: ef9d10bec6fec87d059266b72d0e4505
+      size: 714
+    outs:
+    - path: artifact/data_ingestion
+      hash: md5
+      md5: ea3e6a5fe4afd68c7ae14e484982b283.dir
+      size: 1365089
+      nfiles: 3
+  data_validation:
+    cmd: python main.py data_validation
+    deps:
+    - path: artifact/data_ingestion
+      hash: md5
+      md5: ea3e6a5fe4afd68c7ae14e484982b283.dir
+      size: 1365089
+      nfiles: 3
+    - path: project/components/data_validation.py
+      hash: md5
+      md5: 3b6d3f270caa69ac296da6f2830ccbb2
+      size: 6912
+    - path: project/pipeline/training_pipeline.py
+      hash: md5
+      md5: 8a5e46e93ff6786a7879d1386492e59a
+      size: 4502
+    - path: yaml_file/columns.yaml
+      hash: md5
+      md5: ef9d10bec6fec87d059266b72d0e4505
+      size: 714
+    outs:
+    - path: artifact/data_validation
+      hash: md5
+      md5: d1775ef8327def9ccef5b8128151bee1.dir
+      size: 1696
+      nfiles: 1
