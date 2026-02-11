@@ -30,24 +30,24 @@ stages:
       - artifact/data_transform
       #- final_model/preprocessing.pkl
 
-  model_trainer:
-    cmd: python main.py model_trainer
-    deps:
-      - project/pipeline/training_pipeline.py
-      - project/components/model_trainer.py
-      - artifact/data_transform
-      - yaml_file/param.yaml
-    outs:
-      - artifact/model_trainer
-      - final_model/best_model.pkl
+  # model_trainer:
+  #   cmd: python main.py model_trainer
+  #   deps:
+  #     - project/pipeline/training_pipeline.py
+  #     - project/components/model_trainer.py
+  #     - artifact/data_transform
+  #     - yaml_file/param.yaml
+  #   outs:
+  #     - artifact/model_trainer
+  #     - final_model/prediction_model/pred_model.pkl
 
-  model_evaluation:
-    cmd: python main.py model_evaluation
-    deps:
-      - project/pipeline/training_pipeline.py
-      - project/components/model_evalution.py
-      - final_model/best_model.pkl
-      - artifact/model_trainer
-    outs:
-      - artifact/model_evaluation
+  # model_evaluation:
+  #   cmd: python main.py model_evaluation
+  #   deps:
+  #     - project/pipeline/training_pipeline.py
+  #     - project/components/model_evalution.py
+  #     - final_model/prediction_model/pred_model.pkl
+  #     - artifact/model_trainer
+  #   outs:
+  #     - artifact/model_evaluation
 
