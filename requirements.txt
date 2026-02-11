@@ -20,4 +20,8 @@ dvc==3.66.1
 neuro-mf==0.0.5
 reqsnap
 
+## dev
+mypy-boto3-s3
+
+
 -e .
