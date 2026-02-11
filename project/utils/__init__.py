@@ -82,7 +82,7 @@ def save_object(file_path: str, obj) -> None:
 
         # Write the object using pickle
         with open(file_path, "wb") as file_obj:
-            pickle.dump(obj, file_obj)
+            joblib.dump(obj, file_obj)
 
     except Exception as e:
         raise Exception(f"Error while saving object: {e}")
