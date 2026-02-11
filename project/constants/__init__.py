@@ -1,6 +1,8 @@
 import os
 import numpy as np
+from datetime import date
 
+Current_Year = date.today().year
 
 # MongoDB
 Data_Base_Name = 'Customer_Churn'
@@ -58,11 +60,23 @@ DATA_TRANSFORMATION_IMPUTER_PARAMS = {
 # Model Trainer 
 MODEL_TRAINER_DIR = 'model_trainer'
 MODEL_TRAINER_FILE_PATH = 'best_model'
-BEST_MODEL_OBJECT = 'best_model.pkl' 
+BEST_MODEL_OBJECT = 'best_model.pkl'
+PREDICTION_BEST_MODEL_OBJECT = 'pred_model.pkl'
 EXCEPTED_SCORE:float = 0.7
 
 
 
 
+AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
+REGION_NAME = "us-east-1"
 
 
+
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
+MODEL_BUCKET_NAME = ""
+MODEL_PUSHER_S3_KEY = ""
+
+
+APP_HOST = "0.0.0.0"
+APP_PORT = 8080
