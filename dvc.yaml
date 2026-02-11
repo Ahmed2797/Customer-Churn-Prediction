@@ -41,12 +41,13 @@ stages:
       - artifact/model_trainer
       - final_model/best_model.pkl
 
-  # model_evaluation:
-  #   cmd: python main.py model_evaluation
-  #   deps:
-  #     - project/pipeline/training_pipeline.py
-  #     - final_model/best_model.pkl
-  #     - artifact/model_trainer
-  #   outs:
-  #     - artifact/model_evaluation
+  model_evaluation:
+    cmd: python main.py model_evaluation
+    deps:
+      - project/pipeline/training_pipeline.py
+      - project/components/model_evalution.py
+      - final_model/best_model.pkl
+      - artifact/model_trainer
+    outs:
+      - artifact/model_evaluation
 

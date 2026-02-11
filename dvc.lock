@@ -56,8 +56,8 @@ stages:
     deps:
     - path: artifact/data_validation
       hash: md5
-      md5: 7da11e7093a983bc6641da1c707adfde.dir
-      size: 1695
+      md5: cafb1196400686598ed70514c4a4e32d.dir
+      size: 1696
       nfiles: 1
     - path: project/components/data_transformation.py
       hash: md5
