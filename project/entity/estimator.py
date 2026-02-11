@@ -4,6 +4,32 @@ from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator
 from project.exception import CustomException
 
+
+
+class ChurnTargetMapping:
+    """
+    Mapping for churn prediction target variable.
+    """
+
+    no_churn: int = 0
+    churn: int = 1
+
+    @classmethod
+    def as_dict(cls) -> dict:
+        """Return label → value mapping"""
+        return {
+            "no_churn": cls.no_churn,
+            "churn": cls.churn,
+        }
+
+    @classmethod
+    def reverse_mapping(cls) -> dict:
+        """Return value → label mapping"""
+        mapping = cls.as_dict()
+        return {v: k for k, v in mapping.items()}
+
+
+
 class ProjectModel:
     """
     Predict using a saved preprocessing pipeline and trained ML model.
