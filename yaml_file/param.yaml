@@ -14,9 +14,9 @@ model_selection:
       random_state: 42
     search_param_grid:
       n_estimators: [200]
-      max_depth: [7, 8]
-      min_samples_split: [7, 10]
-      min_samples_leaf: [3, 5]
+    #   max_depth: [7, 8]
+    #   min_samples_split: [7, 10]
+    #   min_samples_leaf: [3, 5]
 
   module_1:
     class: GradientBoostingClassifier
@@ -25,9 +25,9 @@ model_selection:
       random_state: 42
     search_param_grid:
       learning_rate: [0.01, 0.05]
-      n_estimators: [200, 250]
-      max_depth: [5, 7]
-      subsample: [0.7, 0.8]
+    #   n_estimators: [200, 250]
+    #   max_depth: [5, 7]
+    #   subsample: [0.7, 0.8]
 
   module_2:
     class: XGBClassifier
@@ -38,12 +38,13 @@ model_selection:
       random_state: 42
       use_label_encoder: False
     search_param_grid:
-      n_estimators: [200, 300]
-      max_depth: [5, 7]
-      learning_rate: [0.04, 0.05]
-      subsample: [0.7, 0.8]
-      colsample_bytree: [0.6, 0.8]
-      early_stopping_rounds: 50
+      n_estimators: [200,250]
+      # n_estimators: [168,170]
+    #   max_depth: [5, 7]
+    #   learning_rate: [0.04, 0.05]
+    #   subsample: [0.7, 0.8]
+    #   colsample_bytree: [0.6, 0.8]
+      # early_stopping_rounds: [30,50]
 
   # Optional: Add more models here
   # module_3:
