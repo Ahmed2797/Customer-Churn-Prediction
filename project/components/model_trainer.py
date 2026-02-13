@@ -113,6 +113,10 @@ class Model_Trainer:
                 model_name = type(model).__name__
                 y_pred = model.predict(x_test)
 
+                # y_proba = model.predict_proba(x_test)[:, 1]
+                # y_pred = (y_proba >= 0.3).astype(int)
+
+
                 metrics = {
                     "Model": model_name,
                     "ModelObject": model,
