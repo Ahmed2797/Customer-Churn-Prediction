@@ -23,9 +23,33 @@ def preprocess_customer_data(df: pd.DataFrame) -> pd.DataFrame:
     )
     
     # Encode Gender
-    df['Gender'] = (df['Gender'] == 'Male').astype(int)
+    # df['Gender'] = (df['Gender'] == 'Male').astype(int)
+    df['Gender'] = encode_gender(df['Gender'])
     
     # Drop original Geography column
     # df = df.drop(columns=['Geography'], axis=1)
     
     return df
+
+
+
+def encode_gender(x):
+    """
+    Universal gender encoder.
+    Works for:
+    - pandas Series
+    - single value
+    """
+
+    # Case 1 → Pandas Series (training data)
+    if isinstance(x, pd.Series):
+        return (
+            x.astype(str)
+             .str.strip()
+             .str.lower()
+             .eq("male")
+             .astype(int)
+        )
+
+    # Case 2 → Single value (prediction)
+    return int(str(x).strip().lower() == "male")
